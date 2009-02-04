@@ -1,0 +1,25 @@
+<% # stylesheets 'scaffold' %>
+<% # javascripts 'prototype', 'effects', 'dragdrop', 'assets' %>
+
+<% fields_for_page_object do |f| %>
+  <p>
+    <%= f.label :urn %><br />
+    <%= f.text_field :urn %>
+  </p>
+  <p>
+    <%= f.label :header %><br />
+    <%= f.text_field :header %>
+  </p>
+  <p>
+    <%= f.label :data_path %><br />
+    <%= f.text_field :data_path %>
+  </p>
+  <p>
+    <%= f.label :order %><br />
+    <%= f.text_field :order %>
+  </p>
+  <p>
+    <%= f.label :limit %><br />
+    <%= f.text_field :limit %>
+  </p>
+<% end %>
