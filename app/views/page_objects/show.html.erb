@@ -1,28 +1,18 @@
-<% # stylesheets 'scaffold' %>
-<% # javascripts 'prototype', 'effects', 'dragdrop', 'assets' %>
+<% stylesheets 'query-listing' %>
+<% # javascripts 'query-listing' %>
 
-<p>
-  <b>Urn:</b>
-  <%=h @page_object.urn %>
-</p>
 
-<p>
-  <b>Header:</b>
-  <%=h @page_object.header %>
-</p>
+<h2><%=h @page_object.header %></h2>
 
-<p>
-  <b>Data path:</b>
-  <%=h @page_object.data_path %>
-</p>
-
-<p>
-  <b>Order:</b>
-  <%=h @page_object.order %>
-</p>
-
-<p>
-  <b>Limit:</b>
-  <%=h @page_object.limit %>
-</p>
-
+<div class="listings<%= ' no-listings' if @page_object.full_listings.empty? %>">
+<% @page_object.full_listings.each do |listing| %>
+  <div class="listing">
+    <a href="<%= listing.url %>">
+      <div class="img"><%=image_tag listing.picture if listing.respond_to?(:picture) %></div>
+      <div class="name"><%=h listing.name rescue 'Unknown' %></div>
+      <div class="description"><%=h listing.description  rescue 'Unknown' %></div>
+      <div class="clearfix">&nbsp;</div>
+    </a>
+  </div>
+<% end %>
+</div>

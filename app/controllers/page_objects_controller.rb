@@ -17,6 +17,7 @@ class PageObjectsController < ApplicationController
   # GET /page_objects/1
   # GET /page_objects/1.xml
   def show
+    @page_object.fetch_data
     render_to_page_object
 
     respond_to do |format|

@@ -1,25 +1,32 @@
-<% # stylesheets 'scaffold' %>
-<% # javascripts 'prototype', 'effects', 'dragdrop', 'assets' %>
+<% stylesheets 'query-listing', 'query-listing-edit' %>
+<% javascripts 'query-listing-edit' %>
 
 <% fields_for_page_object do |f| %>
-  <p>
-    <%= f.label :urn %><br />
-    <%= f.text_field :urn %>
-  </p>
-  <p>
-    <%= f.label :header %><br />
+  <div>
+    <%= f.label :header %>
     <%= f.text_field :header %>
-  </p>
-  <p>
-    <%= f.label :data_path %><br />
+  </div>
+  <div>
+    <%= f.label :data_path %>
     <%= f.text_field :data_path %>
-  </p>
-  <p>
-    <%= f.label :order %><br />
-    <%= f.text_field :order %>
-  </p>
-  <p>
-    <%= f.label :limit %><br />
+  </div>
+  <div>
+    <%= f.label :order_by %>
+    <%= f.text_field :order_by %>
+  </div>
+  <div>
+    <%= f.label :order_direction %>
+    <%= f.select :order_direction, [["Ascending", 'asc'], ["Decending", 'desc']] %>
+  </div>
+  <div>
+    <%= f.label :limit, "Max Results" %>
     <%= f.text_field :limit %>
-  </p>
+  </div>
+  
+  <div>
+    <%= f.label :update_frequency %>
+    Every <%= f.text_field :update_frequency %> Minutes
+    <br /> 
+    (a value of 0 will try to only call for an update when the data has been updated)<br/>
+  </div>
 <% end %>
