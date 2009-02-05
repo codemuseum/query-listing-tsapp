@@ -11,7 +11,7 @@
       <div class="img"><%=image_tag listing.picture if listing.respond_to?(:picture) %></div>
       <div class="name"><%=h listing.name rescue 'Unknown' %></div>
       <div class="description"><%=h listing.description  rescue 'Unknown' %></div>
-      <div class="clearfix">&nbsp;</div>
+      <div class="clearfix"></div>
     </a>
   </div>
 <% end %>
