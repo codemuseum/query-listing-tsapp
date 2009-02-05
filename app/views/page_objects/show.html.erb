@@ -7,8 +7,8 @@
 <div class="listings<%= ' no-listings' if @page_object.full_listings.empty? %>">
 <% @page_object.full_listings.each do |listing| %>
   <div class="listing">
-    <a href="<%= listing.url %>">
-      <% if listing.respond_to?(:picture) %><div class="img"><%=image_tag listing.picture %></div><% end %>
+    <a href="<%= listing.url %>" class="<%= listing.respond_to?(:picture) ? 'with-img' : 'no-img'  %>">
+      <% if listing.respond_to?(:picture) %><div class="img"><%=image_tag listing.picture %></div><% end%>
       <div class="name"><%=h listing.name rescue 'Unknown' %></div>
       <div class="description"><%=h listing.description  rescue 'Unknown' %></div>
       <div class="clearfix"></div>
