@@ -1,8 +1,8 @@
 body.displaying-page.action-edit .app-query-listing .listings.no-listings { border:1px dotted gray; height:12px;}
-.app-query-listing .listings a {display:block; position:relative; text-decoration:none;}
+.app-query-listing .listings a {display:block; position:relative; text-decoration:none; margin:0 0.3em;}
 .app-query-listing .listings a div { cursor:pointer; }
 .app-query-listing .listings a.with-img div {margin-left:55px;}
-.app-query-listing .listings a div.img { margin:0; float:left;}
+.app-query-listing .listings a div.img { margin:0; width:50px; padding:0px; float:left;}
 .app-query-listing .listings a div.img img { width:50px; }
 .app-query-listing .listings a div.description {font-size:83%;}
 .app-query-listing .listings a div.clearfix {clear:left; height:1px; font-size:1px; line-height:0px; margin:0; paddin}
