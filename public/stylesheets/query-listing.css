@@ -3,4 +3,4 @@ body.displaying-page.action-edit .app-query-listing .listings.no-listings { bord
 .app-query-listing .listings a div { cursor:pointer; margin-left:55px;}
 .app-query-listing .listings a div.img { margin:0; float:left;}
 .app-query-listing .listings a div.img img { width:50px; }
-.app-query-listing .listings a div.clearfix
+.app-query-listing .listings a div.clearfix {clear:left; height:1px; font-size:1px; line-height:0px; margin:0; paddin}

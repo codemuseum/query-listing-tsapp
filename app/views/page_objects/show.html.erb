@@ -8,7 +8,7 @@
 <% @page_object.full_listings.each do |listing| %>
   <div class="listing">
     <a href="<%= listing.url %>">
-      <div class="img"><%=image_tag listing.picture if listing.respond_to?(:picture) %></div>
+      <% if listing.respond_to?(:picture) %><div class="img"><%=image_tag listing.picture %></div><% end %>
       <div class="name"><%=h listing.name rescue 'Unknown' %></div>
       <div class="description"><%=h listing.description  rescue 'Unknown' %></div>
       <div class="clearfix"></div>
