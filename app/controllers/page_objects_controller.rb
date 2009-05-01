@@ -11,6 +11,7 @@ class PageObjectsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @page_objects }
+      format.tson { render :json => @page_objects }
     end
   end
 
@@ -23,6 +24,7 @@ class PageObjectsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @page_object }
+      format.tson { render :json => @page_object }
     end
   end
 
@@ -35,6 +37,7 @@ class PageObjectsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @page_object }
+      format.tson { render :json => @page_object }
     end
   end
 
@@ -45,6 +48,7 @@ class PageObjectsController < ApplicationController
     respond_to do |format|
       format.html # edit.html.erb
       format.xml  { render :xml => @page_object }
+      format.tson { render :json => @page_object }
     end
   end
 
@@ -58,10 +62,12 @@ class PageObjectsController < ApplicationController
         flash[:notice] = 'PageObject was successfully created.'
         format.html { redirect_to(@page_object) }
         format.xml  { render :xml => @page_object, :status => :created, :location => @page_object }
+        format.tson { render :json => @page_object, :status => :created, :location => @page_object }
       else
         render_to_page_object
         format.html { render :action => "new" }
         format.xml  { render :xml => @page_object, :status => :unprocessable_entity }
+        format.tson { render :json => @page_object, :status => :unprocessable_entity }
       end
     end
   end
@@ -75,10 +81,12 @@ class PageObjectsController < ApplicationController
         flash[:notice] = 'PageObject was successfully created.'
         format.html { redirect_to(@page_object) }
         format.xml  { render :xml => @page_object, :status => :created, :location => @page_object }
+        format.tson { render :json => @page_object, :status => :created, :location => @page_object }
       else
         render_to_page_object
         format.html { render :action => "new" }
         format.xml  { render :xml => @page_object, :status => :unprocessable_entity }
+        format.tson { render :json => @page_object, :status => :unprocessable_entity }
       end
     end
   end
@@ -92,10 +100,12 @@ class PageObjectsController < ApplicationController
         flash[:notice] = 'PageObject was successfully updated.'
         format.html { redirect_to(@page_object) }
         format.xml  { head :ok }
+        format.tson { head :ok }
       else
         render_to_page_object
         format.html { render :action => "edit" }
         format.xml  { render :xml => @page_object, :status => :unprocessable_entity }
+        format.tson { render :json => @page_object, :status => :unprocessable_entity }
       end
     end
   end
@@ -108,6 +118,7 @@ class PageObjectsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(page_objects_url) }
       format.xml  { head :ok }
+      format.tson { head :ok }
     end
   end
 end
